@@ -4,7 +4,6 @@
  * WHM Auto Backup
  * Lists and backs up cPanel accounts owned by a WHM reseller.
  *
- * @version 3.0.0
  * @author Liam Demafelix <liamdemafelix.n@gmail.com>
  * @url https://github.com/liamdemafelix/whmautobackup
  */

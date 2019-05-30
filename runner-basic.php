@@ -9,6 +9,13 @@
  * @url https://github.com/liamdemafelix/whmautobackup
  */
 
+/**
+ * This is the basic runner.
+ * This is useful for non-timestamped backups in the event
+ * that your lifecycle policies would take care of backup rotation,
+ * such as in the case of S3 or Backblaze B2.
+ */
+
 define('BASEPATH', __DIR__ . DIRECTORY_SEPARATOR);
 
 /**
@@ -99,7 +106,7 @@ $cli->out("Initializing...");
 if ($destinationData['type'] == 'scp-pass') {
     try {
         $scp = new \Classes\Scp($destinationData);
-        $path = $scp->makeRuntimeDirectory($timestamp, $servers);
+        $path = "/";
         if (!$path) {
             $cli->error("Failed to create backup destination directory via SCP.");
             exit(1);
@@ -112,7 +119,7 @@ if ($destinationData['type'] == 'scp-pass') {
 } elseif ($destinationData['type'] == 'ftp') {
     try {
         $ftp = new \Classes\Ftp($destinationData);
-        $path = $ftp->makeRuntimeDirectory($timestamp, $servers);
+        $path = "/";
         if (!$path) {
             $cli->error("Failed to create backup destination directory via SCP.");
             exit(1);
@@ -182,7 +189,7 @@ foreach ($servers as $server) {
                 'port' => $destinationData['port'],
                 'username' => $destinationData['username'],
                 'password' => $destinationData['password'],
-                'directory' => $path . "/" . $server . "/",
+                'directory' => $path,
                 'cpanel_jsonapi_user' => $object->user
             ];
             if ($cli->arguments->defined('email')) {
@@ -215,7 +222,7 @@ foreach ($servers as $server) {
                 'username' => $destinationData['username'],
                 'password' => $destinationData['password'],
                 'variant' => $destinationData['variant'],
-                'directory' => $path . "/" . $server . "/",
+                'directory' => $path,
                 'cpanel_jsonapi_user' => $object->user
             ];
             if ($cli->arguments->defined('email')) {
