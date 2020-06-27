@@ -2,6 +2,8 @@
 
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GUV2KKLLSGXES)
 
+**Throw me some sats**: [bc1quhgxucxrsz6k50yhylv4zgs6vkxe5gplmnwu06](bitcoin:bc1quhgxucxrsz6k50yhylv4zgs6vkxe5gplmnwu06)
+
 WHM Auto Backup is a free and open source script allowing cPanel/WHM resellers (non-root) to back up sub-accounts to remote servers via SCP/SFTP and FTP.
 
 > If you are looking for the older version of WHM Auto Backup, please see the [legacy repo](https://github.com/liamdemafelix/whmautobackup-legacy).
